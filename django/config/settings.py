@@ -15,7 +15,20 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #'django'폴더를 뜻함 아래
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 'django/templates' 폴더
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+# 'django/static'폴더
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# Django에서 정적파일을 검색할 경로 목록
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+# 만약 요청의 URL이 /static/으로 시작할 겨웅
+# STATICFILES_DIRS에 정의된 경로 목록에서
+# /static/<ppath>/ <-<path>부분에 저으이된 경로에 해당하는 파일을 찾아 돌려준다
+STATIC_URL = '/static/'
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -124,4 +137,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
